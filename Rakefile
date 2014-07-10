@@ -15,7 +15,7 @@ namespace :dev_release do
 	desc "Creates DEV release"
 	task :create do
 		puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-		sh "bosh #{target} create release --force"
+		sh "yes logsearch | bosh create release --force --with-tarball"
 	end
 	desc "Creates and uploads DEV release to currently targeted BOSH."
 	task :create_and_upload => :create do
